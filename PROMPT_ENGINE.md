@@ -47,6 +47,9 @@ Every prompt set must include:
 - one Global Art Direction block
 - one prompt per card
 
+For Xiaohongshu, every prompt set must be written as a content-card series
+rather than a generic poster set or generic product page.
+
 Every card prompt must include:
 
 - Global Art Direction reference
@@ -74,6 +77,8 @@ Every card prompt must include:
 - The cover, content pages, and ending page must look like one family.
 - Do not repeat the exact same composition on every page.
 - Vary composition while preserving the same palette, type direction, and illustration family.
+- For Xiaohongshu, preserve series unity while letting each card feel like
+  a native card in a carousel rather than cloned slides.
 - If a preview sample exists, inherit its finish level, visual energy,
   polish, and overall aesthetic direction.
 - Final assets must not feel like a downgrade from the preview sample.
@@ -94,6 +99,8 @@ It should emphasize:
 - strongest hierarchy
 - highest stop-scroll value
 - simplest immediate read
+- Xiaohongshu-native hook language with large Chinese title blocks
+- stronger contrast and more visible save-worthy value framing
 
 ### Content Pages
 
@@ -105,6 +112,8 @@ It should emphasize:
 - strong text organization
 - easy scan path
 - large readable Chinese text
+- practical, save-worthy structure over decorative layout
+- visually varied but still recognizably part of the same Xiaohongshu series
 
 ### Ending Page
 
@@ -116,6 +125,7 @@ It should emphasize:
 - emotional resolution
 - lighter cognitive load
 - still visually consistent with the series
+- a clear reason to save, follow, or reference later when platform fit calls for it
 
 ---
 
@@ -129,6 +139,8 @@ Every prompt should explicitly protect mobile readability:
 - obvious title area
 - clear safe area for text
 - avoid crowding the edges
+- avoid long paragraph blocks that feel like article screenshots
+- keep visible Chinese copy short enough to scan without zooming
 
 If the page has multiple text layers, the hierarchy must still be obvious
 at phone size.
@@ -149,6 +161,16 @@ Examples:
 
 Do not use identical module placement on every page.
 
+For Xiaohongshu:
+
+- do not default to flat checklist software UI
+- do not default to dashboard modules
+- do not default to presentation slide composition
+- do not default to generic productivity-app framing
+- prefer card-like visual blocks, stronger hook typography, and obvious
+  value cues such as summary chips, emphasis strips, quick labels, or
+  highlighted takeaways when they fit the content
+
 ---
 
 ## Negative Prompt Rules
@@ -164,6 +186,9 @@ Common negative goals:
 - no low-contrast text
 - no distorted anatomy or irrelevant decorative objects
 - no repeated identical composition across all cards
+- no document screenshot feeling
+- no app UI mockup feeling unless the content explicitly requires software UI
+- no plain PowerPoint or meeting-note feeling
 
 Add more negative constraints if the chosen style or platform has a
 clear failure mode.
@@ -179,6 +204,14 @@ After prompts are assembled:
 - if no image generation tool exists, build a complete HTML visual page
   from the card plan and visual strategy, render it in a browser, and
   export PNG screenshots
+
+When using HTML fallback for Xiaohongshu:
+
+- build actual high-fidelity vertical social cards
+- render one card per page role
+- do not render a generic long page and treat it as enough
+- do not ship raw checklist visuals without card-level art direction
+- revise the fallback output if it looks flat, plain, or obviously utilitarian
 
 Do not stop at prompt text alone unless the user explicitly asks for
 copy-only output.

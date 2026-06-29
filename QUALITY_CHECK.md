@@ -42,6 +42,8 @@ The package passes only when:
 - The prompts are complete enough to generate a coherent series.
 - Actual deliverables have been generated, or a browser-rendered fallback
   export has been created.
+- For Xiaohongshu, the delivered cards also feel native to the platform
+  rather than generic design output.
 
 ---
 
@@ -72,12 +74,16 @@ Check:
 - Does the structure match the selected platform behavior?
 - Is the page count appropriate for the platform?
 - Does the pacing fit how users consume content there?
+- For Xiaohongshu, does the package feel like a save-worthy Chinese content
+  card set rather than a document, slide, or dashboard?
 
 Fail Signals:
 
 - Douyin output feels like a slow article.
 - Xiaohongshu output lacks save-worthy practicality.
 - WeChat Feed output is too shallow or too noisy.
+- Xiaohongshu output feels like a generic international design board but not
+  a native platform card set.
 
 ### 3. Title Quality
 
@@ -124,6 +130,8 @@ Fail Signals:
 - Tiny text.
 - Dense paragraphs inside a card.
 - Too many visual elements fighting for attention.
+- Long article-like text blocks dominate the card.
+- The card looks like a screenshot of notes or slides.
 
 ### 6. Mobile Reading Experience
 
@@ -152,8 +160,27 @@ Fail Signals:
 - Cover feels flat or informational only.
 - No immediate reason to tap, save, or read.
 - Title and visuals compete instead of reinforcing each other.
+- Cover looks like a meeting slide or plain checklist instead of a hook card.
 
-### 8. Ending CTA
+### 8. Xiaohongshu-Native Aesthetic
+
+Check:
+
+- Does the card set feel like Xiaohongshu-native Chinese content rather than
+  a generic web layout?
+- Are typography, hooks, and card blocks suitable for Xiaohongshu reading habits?
+- Does the package avoid dashboard, app UI, document, or PPT energy unless
+  the content explicitly requires those forms?
+- Does the set balance practicality with enough visual pull to be saved or shared?
+
+Fail Signals:
+
+- The output looks like an admin panel, software UI, or productivity app.
+- The output looks like a presentation deck or document screenshot.
+- The cards are clean but too plain to feel like platform content.
+- The series does not carry recognizable Xiaohongshu content-card behavior.
+
+### 9. Ending CTA
 
 Check:
 
@@ -167,7 +194,7 @@ Fail Signals:
 - CTA is hard-sell and breaks trust.
 - CTA asks for the wrong action for the platform.
 
-### 9. Prompt Quality
+### 10. Prompt Quality
 
 Check:
 
@@ -184,7 +211,7 @@ Fail Signals:
 - Text placement and hierarchy are vague.
 - Negative prompt is missing.
 
-### 10. Prompt Completeness
+### 11. Prompt Completeness
 
 Check:
 
@@ -198,7 +225,7 @@ Fail Signals:
 - Card-specific visual differences are missing.
 - Prompt language does not preserve series consistency.
 
-### 11. Delivery Completeness
+### 12. Delivery Completeness
 
 Check:
 
@@ -214,7 +241,7 @@ Fail Signals:
 - No final asset links or files were surfaced to the user.
 - The reply is dominated by process explanation instead of deliverables.
 
-### 12. Sample-to-Output Consistency
+### 13. Sample-to-Output Consistency
 
 Check:
 
@@ -240,6 +267,7 @@ Use the following structure inside the `Quality Review` section defined by
 
 - Visual Consistency: Pass / Revise
 - Platform Fit: Pass / Revise
+- Xiaohongshu-Native Aesthetic: Pass / Revise
 - Card Planning Quality: Pass / Revise
 - Title Quality: Pass / Revise
 - Readability: Pass / Revise
@@ -258,6 +286,10 @@ Use the following structure inside the `Quality Review` section defined by
 
 If two or more dimensions return `Revise`, the package should be improved
 before delivery.
+
+For Xiaohongshu specifically, a `Revise` on `Platform Fit`,
+`Xiaohongshu-Native Aesthetic`, or `Cover Strength` should block delivery
+until improved, even if the other dimensions pass.
 
 If only one dimension returns `Revise`, revise that part and keep the rest
 of the structure stable.

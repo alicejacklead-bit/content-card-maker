@@ -71,20 +71,53 @@ Follow this sequence exactly:
 5. Read `LAYOUT_LIBRARY.md` and apply the selected layout preset as the
    structural logic for the card sequence.
 6. Read `PLATFORM_RULES.md` and adapt the package to the chosen platform.
-7. Read `PROMPT_ENGINE.md` and convert the card plan plus visual strategy
+7. If the chosen platform is Xiaohongshu, read `XHS_CARD_SYSTEM.md` and
+   enforce Xiaohongshu-native card behavior before production.
+8. Read `PROMPT_ENGINE.md` and convert the card plan plus visual strategy
    into page-level prompts.
-8. Detect whether an image generation tool is available in the current
+9. Detect whether an image generation tool is available in the current
    environment.
-9. If an image tool is available, generate final cover, content cards,
+10. If an image tool is available, generate final cover, content cards,
    and ending card directly.
-10. If no image tool is available, generate a complete HTML content page,
+11. If no image tool is available, generate a complete HTML content page,
     open it in a browser, and export the rendered cards as PNG images.
-11. If a preview sample, style sample, or first-pass reference image was
+12. If a preview sample, style sample, or first-pass reference image was
     generated earlier in the same task, align the final outputs to that
     reference before delivery.
-12. Read `OUTPUT_FORMAT.md` and format the final answer using the fixed
+13. Read `OUTPUT_FORMAT.md` and format the final answer using the fixed
     delivery structure.
-13. Read `QUALITY_CHECK.md` and review the package before returning it.
+14. Read `QUALITY_CHECK.md` and review the package before returning it.
+15. If the package does not pass the quality gate, improve the visual
+    delivery and re-run the review before returning it.
+
+---
+
+## Workbuddy Execution Contract
+
+When this skill runs inside Workbuddy or any similar agent shell, do not
+take the easiest generic rendering path just because it is faster.
+
+For Xiaohongshu visual packages specifically:
+
+1. The output must be treated as platform-native content cards, not a
+   generic HTML page, not a dashboard, not a slide screenshot, and not a
+   document-style checklist.
+2. The package must include a real cover card, real body cards, and a real
+   ending card.
+3. The visual result must be judged against Xiaohongshu reading behavior:
+   stop-scroll cover, save-worthy usefulness, strong Chinese readability,
+   and clean card-by-card pacing.
+4. If the current production path only yields a flat or utilitarian result,
+   revise the composition, hierarchy, and card system rather than shipping
+   the weak version.
+5. Do not stop after creating one acceptable card. Ensure the full series
+   remains consistent and complete.
+6. If a preview sample exists, lock that direction and expand it into the
+   full series. Do not switch visual systems midway.
+7. If no preview sample exists and the platform is Xiaohongshu, the cover
+   card should be treated as the first style-locking card for the series.
+8. Do not silently downgrade to plain text, plain prompt output, or
+   low-fidelity HTML when richer production is possible.
 
 ---
 
@@ -101,6 +134,8 @@ Follow this sequence exactly:
   the final delivered cards.
 - A sample image is a style commitment, not just inspiration.
 - Prioritize mobile readability over decorative complexity.
+- For Xiaohongshu, prioritize native content-card feeling over generic
+  cleanliness.
 - Compress messy input into a card-friendly structure before drafting.
 - Keep one main point per page unless the page is explicitly a summary or comparison page.
 - When the user asks for a visual content package, do not stop at text analysis.
@@ -112,6 +147,15 @@ Follow this sequence exactly:
   generated assets over long process explanation.
 - If the source is incomplete, make reasonable assumptions and label them
   clearly in the output.
+- Do not ship a Xiaohongshu package that looks like a dashboard, admin panel,
+  document screenshot, productivity app screen, or plain slide deck.
+- Do not treat large Chinese text blocks as acceptable design by default.
+- Avoid uniform card composition across the whole series.
+- For Xiaohongshu, the cover must have a stronger hook than the body cards,
+  and the body cards must be more practical and easier to scan than the cover.
+- If the visual output feels internationally polished but not platform-native,
+  revise toward Xiaohongshu-native Chinese content-card behavior before delivery.
+- A package that is merely "clear" but not "platform-fit" is not complete.
 
 ---
 
@@ -122,6 +166,7 @@ Follow this sequence exactly:
 - `STYLE_LIBRARY.md`: defines style preset details.
 - `LAYOUT_LIBRARY.md`: defines layout structures.
 - `PLATFORM_RULES.md`: defines platform-native constraints.
+- `XHS_CARD_SYSTEM.md`: defines what Xiaohongshu-native card behavior looks like and what should be rejected.
 - `PROMPT_ENGINE.md`: converts card plan and visual strategy into consistent image prompts.
 - `OUTPUT_FORMAT.md`: defines final response structure.
 - `QUALITY_CHECK.md`: defines final review and pass criteria.
@@ -157,6 +202,7 @@ analysis, rationale, or internal planning details.
 - `STYLE_LIBRARY.md`
 - `LAYOUT_LIBRARY.md`
 - `PLATFORM_RULES.md`
+- `XHS_CARD_SYSTEM.md`
 - `PROMPT_ENGINE.md`
 - `OUTPUT_FORMAT.md`
 - `QUALITY_CHECK.md`

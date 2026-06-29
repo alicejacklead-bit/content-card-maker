@@ -223,6 +223,7 @@ content-card-maker/
 ├── STYLE_LIBRARY.md
 ├── LAYOUT_LIBRARY.md
 ├── PLATFORM_RULES.md
+├── XHS_CARD_SYSTEM.md
 ├── PROMPT_ENGINE.md
 ├── OUTPUT_FORMAT.md
 ├── QUALITY_CHECK.md
@@ -304,6 +305,18 @@ content-card-maker/
 - 小绿书
 - 抖音
 
+### `XHS_CARD_SYSTEM.md`
+
+负责把小红书内容卡做得更像小红书，而不是 generic 设计稿。
+
+它定义：
+
+- 小红书封面应该怎么钩人
+- 正文卡应该怎么做信息分层
+- 结尾卡应该怎么收
+- 什么样的结果会被判定为 dashboard / PPT / 文档感
+- 什么才算平台原生的中文内容卡
+
 ### `PROMPT_ENGINE.md`
 
 负责把下面这些信息合成稳定的每页生图 Prompt：
@@ -353,6 +366,21 @@ Final Output
 - `Content Analysis` 默认是内部步骤
 - 对用户的最终展示，不应优先铺大段分析
 - 应优先展示成品、预览图、导出图或交付链接
+
+## Workbuddy 使用原则
+
+如果这个 skill 安装在 Workbuddy 之类的运行环境里，推荐把它当成
+“小红书内容导演系统”，而不是普通图文生成器。
+
+运行时要坚持这几条：
+
+- 不要只停在分析或文案阶段
+- 不要把普通 HTML 长页面当作最终交付
+- 不要把 dashboard、软件界面、会议清单、PPT 页面当作小红书卡片
+- 先锁定封面和系列风格，再批量做正文卡和结尾卡
+- 如果一版虽然清楚，但明显不像小红书内容卡，就继续修，不要交差
+
+这个项目的目标不是“先把图生出来”，而是“把内容变成真正适合平台发布的卡片资产”。
 
 ## 固定输出结构
 
