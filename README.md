@@ -117,15 +117,15 @@
 
 ### 1. 健康科普系列
 
-![健康科普系列](./assets/readme-showcase/health-series.png)
+![健康科普系列](./assets/readme-showcase/health-series-v2.png)
 
 ### 2. Notion 系列
 
-![Notion 系列](./assets/readme-showcase/notion-series.png)
+![Notion 系列](./assets/readme-showcase/notion-series-v2.png)
 
 ### 3. 科技产品系列
 
-![科技产品系列](./assets/readme-showcase/tech-product-series.png)
+![科技产品系列](./assets/readme-showcase/tech-product-series-v2.png)
 
 ## 最适合谁
 
